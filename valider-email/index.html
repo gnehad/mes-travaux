@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <title>Valider un email avec JavaScript</title>
+
+	<style>
+	   #contenu{
+	     padding-top: 10%;
+	     width: 40%;
+		 margin: auto;
+	     font-family: Garamon, sans-serif;
+		 }
+	   h1{
+	     font-size: 120%;
+		 }
+	   .champ{
+	     display: block;
+		 width: 150px;
+		 }
+	    input[type = "text"], input[type = "password"]{
+		   border-radius: 5px;
+		   height: 25px;
+		   margin-bottom: 10px;
+		 }
+	</style>
+</head>
+<body>
+ <div id = "contenu">
+    <h1>Page de connexion</h1>
+	<form method = "post" onsubmit = "return validerPresence()">
+		<label class = "champ" id = "lblEmail" for = "email">Adresse életcronique </label>
+		<input class = "champ"  type = "text" id = "email" name = "email" placeholder = "Votre identifiant"/>
+		<label class = "champ"  id = "lblMotDePasse" for = "motDePasse">Mot de passe</label>
+		<input class = "champ"  type = "password" id = "motDePasse" name = "motDePasse"/>
+		<button id = "btnValider">Vérifier</button>
+	</form>
+ </div>
+ <script src = "js/index.js"></script>
+</body>
+</html>

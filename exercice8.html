@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <title>Exercices</title>
+</head>
+<body>
+    <script>
+	var chaine = prompt("Entrez un mot ou une phrase :");
+	if(chaine != null){
+		for(var i = 0; i < chaine.length; i++){
+		 if(estLettre(chaine[i]) && compterOccurrences(chaine[i], chaine) == 1)
+		   console.log(chaine[i]);
+		 }
+	}else
+	  alert("Vous n'vez rien saisi");
+	  
+	  
+	function estLettre(caractere){
+      if(caractere.toLowerCase() >= 'a' && caractere.toLowerCase <= 'z')
+        return true;
+      return false;
+      }	  
+	function estVoyelles(caractere){
+	  if(estLettre(caractère)){
+	     if(caractere.toLowerCase() == 'a' || caractere.toLowerCase() == 'e' || caractere.toLowerCase() == 'i' 
+            || caractere.toLowerCase() == 'u' || caractere.toLowerCase() == 'o')
+                   return true;
+	  return false;
+	  }
+	  return null;
+    }
+	
+	function compterOccurrences(caractere, chaine){	  
+	  var nbOccurrences = 0;
+	  for(var i = 0; i < chaine.length; i++){
+	    if(chaine[i] == caractere)
+		   nbOccurrences++;
+		}
+	  return nbOccurrences;
+	  }
+
+    </script>
+</body>
+</html>

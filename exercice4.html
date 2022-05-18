@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <title>Exercices</title>
+</head>
+<body>
+    <script>
+        var saisie = prompt("Entrez le nombre de valeurs");
+		if(saisie == null)
+		  alert("Saisie annulée. Le script va se fermer");
+		  else{
+             n = parseInt(saisie.trim());
+             if(isNaN(n))			 
+		      alert("Saisie invalide");
+			 else {
+			  var valeurs = [];
+			  for(var i = 0; i < n; i++)
+			     valeurs[i] = parseInt(prompt("Entrez la valeur " + (i + 1)).trim());
+			  console.log("Somme des valeurs : "+ calculerSomme(valeurs));
+			  console.log("Moyenne des valeurs : "+ calculerMoyenne(valeurs));
+			  console.log("Valeur maximale : "+ max(valeurs));
+			  console.log("Valeur minimale : "+ min(valeurs));
+			 }
+		   }
+		function calculerSomme(listeValeurs){
+		   var somme = 0;
+		   var nbValeursValide = 0;
+		   for(var i = 0; i < listeValeurs.length; i++)
+		      if(!isNaN(listeValeurs[i])){
+			     nbValeursValide++;
+		         somme += listeValeurs[i];
+				 }
+		   return somme;
+		   }
+		function calculerMoyenne(listeValeurs){
+		    var nbValeursValide = 0;
+			for(var i = 0; i < listeValeurs.length; i++)
+		      if(!isNaN(listeValeurs[i]))
+			     nbValeursValide++;
+		   return calculerSomme(listeValeurs) / nbValeursValide;
+		   }
+		function max(listeValeurs){
+		   var max = listeValeurs[0];
+		   for(var i = 1; i < listeValeurs.length; i++)
+		      if(!isNaN(listeValeurs[i])){
+			     if(max < listeValeurs[i])
+				    max = listeValeurs[i];
+				}
+		   return max;
+		   }
+				function min(listeValeurs){
+		   var min = listeValeurs[0];
+		   for(var i = 1; i < listeValeurs.length; i++)
+		      if(!isNaN(listeValeurs[i])){
+			     if(min > listeValeurs[i])
+				    min = listeValeurs[i];
+				}
+		   return min;
+		   }
+    </script>
+</body>
+</html>
